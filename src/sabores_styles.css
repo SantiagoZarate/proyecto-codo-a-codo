@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+@property --mainColor {
+    syntax: '<color>';
+    initial-value:rgb(108, 3, 255);
+    inherits: false;
+  }
+  
+  @property --subColor {
+    syntax: '<color>';
+    initial-value: rgb(188, 3, 255);
+    inherits: false;
+  }
+
+:root {
+    --ofertasColor:rgba(255,255,255);
+    --borderColor: rgba(255, 255, 255, 0.1);
+    --borderColor2: rgba(0, 0, 0, 0.2);
+    --greyBgColor:rgba(0, 0, 0, 0.1);
+    --inactiveText:rgb(255,255,255,0.5);
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: var(--mainColor);
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 0;
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.3) inset;
+}
+
+body::after{
+    contain: "";
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        800px circle at 50% 50%,
+        rgba(255,255,255,0.3),
+        transparent 100%
+    );
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--inactiveText);
+    transition: color 500ms;
+}
+
+a:hover{
+    color: white;
+}
+
+/* HEADER */
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 8rem;
+    position: fixed;
+    backdrop-filter: blur(0);
+    transition: background 500ms, border-color 500ms, backdrop-filter 1s;
+    z-index: 3;
+
+}
+
+.header-scroll {
+    backdrop-filter: blur(0.3rem);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header__ul {
+    list-style: none;
+    display: flex;
+    gap: 3em;
+}
+
+/* MAIN */
+
+main{
+    position: relative;
+    min-height:100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 2;
+}
+
+.sabores{
+    width: auto;
+    height: auto;
+    padding: 4em;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    /* box-shadow: 0 0 100px var(--mainColor); */
+}
+
+.sabores h1{
+    margin-bottom: 2em;
+}
+
+.sabores__list{
+    list-style: none;
+    background-color: yellow;
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(3, 1fr);
+    gap: 4rem;
+}
