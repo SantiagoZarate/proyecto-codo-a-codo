@@ -13,11 +13,11 @@
 
 <body>
     <header class="header">
-        <div class="header__logo"><i>LOGO</i></div>
+        <div class="header__logo"> <a href="index.html"><i>LOGO</i></a></div>
 
         <ul class="header__ul">
             <li class="header__ul-item"><a href="#">ORDENAR</a></li>
-            <li class="header__ul-item"><a href="#">MENU</a></li>
+            <li class="header__ul-item"><a href="#">SABORES</a></li>
             <li class="header__ul-item"><a href="#">SUCURSALES</a></li>
         </ul>
     </header>
@@ -29,19 +29,19 @@
         </div>
 
         <ul class="navbar">
-            <li class="sabores__navbar"><a href="#"> Especiales</a></li>
-            <li class="sabores__navbar"><a href="#"> Cremas</a></li>
-            <li class="sabores__navbar"><a href="#"> Frutales al agua</a></li>
-            <li class="sabores__navbar"><a href="#"> Dulce de leche</a></li>
-            <li class="sabores__navbar"><a href="#"> Chocolate</a></li>
+            <li class="sabores__navbar"><a href="#especiales"> Especiales</a></li>
+            <li class="sabores__navbar"><a href="#cremas"> Cremas</a></li>
+            <li class="sabores__navbar"><a href="#frutales_al_agua"> Frutales al agua</a></li>
+            <li class="sabores__navbar"><a href="#chocolate"> Chocolate</a></li>
+            <li class="sabores__navbar"><a href="#dulce_de_leche"> Dulce de leche</a></li>
         </ul>
 
-        <div sabores class="big-box">
+        <div sabores class="big-box" id="especiales">
             <div class="big-box__items">
                 <div>Especiales</div>
                 <i class="fa fa-plus-circle"></i>
             </div>
-            <div class="box">
+            <div class="box" >
                 <ul>
                     <li>Chocotorta</li>
                     <li>Torta de Limon</li>
@@ -60,7 +60,7 @@
             </div>
         </div>
         
-        <div sabores class="big-box">
+        <div sabores class="big-box" id="cremas">
             <div class="big-box__items">
                 <div>Cremas</div>
                 <i class="fa fa-plus-circle"></i>
@@ -84,7 +84,7 @@
             </div>
         </div>
 
-        <div sabores class="big-box">
+        <div sabores class="big-box" id="frutales_al_agua">
             <div class="big-box__items">
                 <div>Frutales al agua</div>
                 <i class="fa fa-plus-circle"></i>
@@ -105,7 +105,58 @@
                 </ul>
             </div>
         </div>
+
+        <div sabores class="big-box" id="chocolates">
+            <div class="big-box__items">
+                <div>Chocolates</div>
+                <i class="fa fa-plus-circle"></i>
+            </div>
+            <div class="box">
+                <ul>
+                    <li>Amargo</li>
+                    <li>Blanco</li>
+                    <li>Con Almendras</li>
+                    <li>Colombiano</li>
+                    <li>Italiano</li>
+                    <li>Nevado</li>
+                    <li>Suizo</li>
+                    <li>Trevi</li>
+                    <li class="ul__img"></li>
+                </ul>
+            </div>
+        </div>
+
+        <div sabores class="big-box" id="dulce_de_leche">
+            <div class="big-box__items">
+                <div>Dulce de leche</div>
+                <i class="fa fa-plus-circle"></i>
+            </div>
+            <div class="box">
+                <ul>
+                    <li>Clasico</li>
+                    <li>Granizado</li>
+                    <li>Super</li>
+                    <li>Trevi</li>
+                    <li>Nuez</li>
+                    <li>Tentacion</li>
+                    <li>Bombon</li>
+                    <li>Acaramelado</li>
+                    <li class="ul__img"></li>
+                </ul>
+            </div>
+        </div>
     </main>
+
+    <div class="prueba-grid">
+        <div>Hola</div>
+        <div>
+            <ul>
+                <li>CHAU</li>
+                <li>CHAU</li>
+                <li>CHAU</li>
+            </ul>
+        </div>
+    </div>
 </body>
 
 </html>

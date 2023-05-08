@@ -92,10 +92,6 @@ main{
     z-index: 2;
 }
 
-/* main > *:not(.title){
-    margin-bottom: 4em;
-} */
-
 /* H1 MAIN */
 
 .title{
@@ -162,7 +158,6 @@ h1::after{
 /* CONTAINER */
 
 .container{
-    /* background-color: red; */
     width: 100%;
     display: grid;
     grid-template: 1fr / 2fr 1fr ;
@@ -172,48 +167,12 @@ h1::after{
 
 /* SABORES */
 
-.sabores{
-    width: auto;
-    height: auto;
-    padding: 4em;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.sabores h2{
-    align-self: flex-start;
-}
-
-.sabores__list{
-    list-style: none;
-    display: grid;
-    text-align: center;
-    grid-template-columns: repeat(3, 1fr) ;
-    gap: 4rem;
-}
-
-.sabores__list__item{
-    border-radius: 2px;
-}
-
-.sabores__img{
-    /* background-color: red; */
-    background-image: url(../Images/cheesecake.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-/* CREMAS */
-
 .big-box{
     width: 100%;
-    /* background-color: rgb(127, 127, 127); */
     border-top: 1px solid var(--borderColor2);
     grid-template-columns: 1fr 1fr;
     padding: 2em;
-    /* border-radius: 10px; */
+    transition: background-color 500ms;
 }
 
 .big-box__items{
@@ -222,9 +181,18 @@ h1::after{
     padding: 0 5em;
 }
 
+.big-box__items > *{
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: color 500ms;
+}
+
+.big-box:hover .big-box__items > *{
+    color: rgba(0, 0, 0, 1);
+}
+
 .box{
-    /* background-color: red; */
-    /* text-align: center; */
     display: grid;
     grid-template-rows: 0fr;
     transition: padding 500ms,  grid-template-rows 500ms, background-color 500ms;
@@ -238,11 +206,6 @@ h1::after{
     gap: 1em;
 }
 
-/* .big-box:hover .box{
-    grid-template-rows: 3fr;
-    padding: 2em 0;
-} */
-
 .open-box{
     grid-template-rows: 3fr;
     padding: 2em 0;
@@ -250,9 +213,27 @@ h1::after{
 
 .ul__img{
     grid-area: 1 / 4 / 5 / -1;
-    /* background-color: red; */
     background-image: url(../Images/cheesecake.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.prueba-grid{
+    background-color: white;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0fr;
+    padding: 3em;
+}
+.prueba-grid > div{
+    overflow: hidden;
+}
+.prueba-grid:hover{
+    grid-template-rows: 1fr;
+}
+
+.prueba-grid  ul {
+    background-color: red;
 }

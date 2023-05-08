@@ -2,22 +2,22 @@
 
 @property --mainColor {
     syntax: '<color>';
-    initial-value:rgb(108, 3, 255);
+    initial-value: rgb(108, 3, 255);
     inherits: false;
-  }
-  
-  @property --subColor {
+}
+
+@property --subColor {
     syntax: '<color>';
     initial-value: rgb(188, 3, 255);
     inherits: false;
-  }
+}
 
 :root {
-    --ofertasColor:rgba(255,255,255);
+    --ofertasColor: rgba(255, 255, 255);
     --borderColor: rgba(255, 255, 255, 0.1);
     --borderColor2: rgba(0, 0, 0, 0.2);
-    --greyBgColor:rgba(0, 0, 0, 0.1);
-    --inactiveText:rgb(255,255,255,0.5);
+    --greyBgColor: rgba(0, 0, 0, 0.1);
+    --inactiveText: rgb(255, 255, 255, 0.5);
 }
 
 * {
@@ -39,7 +39,7 @@ a {
     transition: color 500ms;
 }
 
-a:hover{
+a:hover {
     color: white;
 }
 
@@ -53,10 +53,13 @@ a:hover{
     justify-content: space-between;
     padding: 0 8rem;
     position: fixed;
-    /* border-bottom: 1px solid rgba(255, 255, 255, 0); */
     backdrop-filter: blur(0);
     transition: background 500ms, border-color 500ms, backdrop-filter 1s;
     z-index: 3;
+}
+
+.header__logo {
+    font-size: 1.5rem;
 }
 
 .header-scroll {
@@ -80,32 +83,30 @@ main>* {
     margin-bottom: 6rem;
 }
 
-
+/* ////// */
 /* INICIO */
+/* ////// */
 
 .inicio {
-    /* width: 100vw; */
     margin-top: 0;
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-items: center;
-    background:var(--mainColor);
+    background: var(--mainColor);
     z-index: -1;
     box-shadow: 0px 0px 100px inset rgba(0, 0, 0, 0.327);
 }
 
-.inicio::after{
+.inicio::after {
     content: "";
     width: 100%;
     height: 100%;
     position: absolute;
-    background: radial-gradient(
-        700px circle at 33% 50%,
-        rgba(255, 255, 255, 0.4),
-        transparent 100%
-    );
+    background: radial-gradient(700px circle at 33% 50%,
+            rgba(255, 255, 255, 0.4),
+            transparent 100%);
     pointer-events: none;
     z-index: 0;
 }
@@ -115,25 +116,15 @@ main>* {
     align-items: center;
     justify-content: center;
     padding: 5rem 2rem;
-    /* background-color: red; */
     width: 100%;
     height: 100%;
-    /* border-left: 1px solid var(--borderColor); */
 }
 
-.inicio__box:first-child{
-    /* background-color: red; */
+.inicio__box:first-child {
     flex-wrap: wrap;
 }
 
-
-.inicio__box__img:first-child{
-    /* background-color: yellow; */
-    /* position: absolute; */
-    /* animation: 12s rotacionHelado infinite; */
-}
-
-.inicio__box__img{
+.inicio__box__img {
     /* background-color: red; */
     position: absolute;
     background-image: url(../Images/pote_helado.png);
@@ -149,7 +140,7 @@ main>* {
     animation: 8s rotacionHeladoReversa ease-in-out infinite;
 }
 
-.inicio__box__img:first-child::after{
+.inicio__box__img:first-child::after {
     content: "";
     position: absolute;
     width: inherit;
@@ -157,10 +148,10 @@ main>* {
     background: url(../Images/pote_tapa.png);
     background-size: contain;
     background-repeat: no-repeat;
-    animation:  8s rotacion ease-in-out infinite;
+    animation: 8s rotacion ease-in-out infinite;
 }
 
-.inicio__box__img:nth-child(2){
+.inicio__box__img:nth-child(2) {
     background-image: url(../Images/icecream.png);
     width: 25rem;
     height: 25rem;
@@ -171,59 +162,18 @@ main>* {
 }
 
 
-
-@keyframes rotacionHelado {
-    0%{
-        transform: rotate(-5deg);
-    }
-
-    50%{
-        transform: rotate(15deg);
-    }
-
-    100%{
-        transform: rotate(-5deg);
-    }
-}
-
-@keyframes rotacionHeladoReversa {
-
-    0%{
-        transform: rotate(5deg) ;
-    }
-    50%{
-        transform: rotate(-15deg);
-    }
-    100%{
-        transform: rotate(5deg);
-    }
-}
-
-@keyframes rotacion {
-
-    0%{
-        transform: rotate(-5deg) translateX(10px)  translateY(-30px);
-    }
-    50%{
-        transform: rotate(15deg) translateX(30px)  translateY(-80px);
-    }
-    100%{
-        transform: rotate(-5deg) translateX(10px) translateY(-30px);
-    }
-}
-
-.inicio__box:last-child{
+.inicio__box:last-child {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.inicio__box > p{
+.inicio__box>p {
     padding: 2rem;
     text-align: justify;
 }
 
-.inicio__box:last-child > button{
+.inicio__box:last-child>button {
     border: none;
     color: white;
     font-weight: bold;
@@ -235,16 +185,16 @@ main>* {
     position: relative;
     overflow: hidden;
     z-index: 0;
-    box-shadow: 0 0 0 rgba(255,255,255,0);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
     transition: color 300ms, box-shadow 500ms;
 }
 
-.inicio__box:last-child > button:hover{
+.inicio__box:last-child>button:hover {
     color: black;
-    box-shadow: 0 0 100px rgba(255,255,255,0.6);
-}   
+    box-shadow: 0 0 100px rgba(255, 255, 255, 0.6);
+}
 
-.inicio__box:last-child > button:after{
+.inicio__box:last-child>button:after {
     width: 100%;
     height: 100%;
     content: "";
@@ -256,30 +206,32 @@ main>* {
     z-index: -1;
 }
 
-.inicio__box:last-child > button:hover::after{
+.inicio__box:last-child>button:hover::after {
     left: 0%;
 }
 
+/* /////// */
 /* OFERTAS */
+/* /////// */
 
-.ofertas,
-.novedades {
+.ofertas {
     width: 100%;
     height: 50rem;
     border: 1px solid var(--borderColor2);
     background-color: var(--greyBgColor);
 }
 
-.ofertas{
+.ofertas {
     display: grid;
-    grid-template: 100px 1fr  / 1fr 1fr 1fr;
+    grid-template: 100px 1fr / 1fr 1fr 1fr;
     gap: 1rem;
     padding: 2rem;
 }
 
-.ofertas__box{
+.ofertas__box {
     /* max-width: 20rem; */
     /* height: 50%; */
+    max-width: 350px;
     background-color: var(--ofertasColor);
     border: 1px solid var(--borderColor2);
     color: black;
@@ -292,7 +244,7 @@ main>* {
     overflow: hidden;
 }
 
-.ofertas__box__img{
+.ofertas__box__img {
     width: 100%;
     height: 60%;
     /* height: 200px; */
@@ -303,7 +255,7 @@ main>* {
     border-bottom: 1px solid var(--borderColor2);
 }
 
-.helado__rosa{
+.helado__rosa {
     background: url(../Images/icecream2.png);
     /* background-color: red; */
     background-size: 8rem;
@@ -311,11 +263,11 @@ main>* {
     background-position: center;
 }
 
-.helado__multi{
+.helado__multi {
     background-image: url(../Images/icecream3.png);
 }
 
-.helado__amarillo{
+.helado__amarillo {
     background: url(../Images/icecream4.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -323,7 +275,7 @@ main>* {
     background-size: 8rem;
 }
 
-.ofertas__box  p{
+.ofertas__box p {
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -331,41 +283,38 @@ main>* {
     justify-content: center;
 }
 
-span{
+span {
     margin: 0.5rem 0;
 }
 
-span:first-child{
+.ofertas__box span:first-child {
     color: rgba(0, 0, 0, 0.5);
     text-decoration: line-through;
     text-decoration-color: rgba(0, 0, 0, 0.5);
 }
 
-span:last-child{
+.ofertas__box span:last-child {
     font-weight: 600;
     color: var(--mainColor);
 }
 
-.ofertas__box > button{
-    /* margin: 3rem; */
+.ofertas__box>button {
     cursor: pointer;
     padding: 1rem 2rem;
     border: 1px solid rgb(188, 3, 255);
     border-radius: 10px;
-    background: linear-gradient(
-        90deg,
-        var(--mainColor), 
-        var(--subColor)
-    );
+    background: linear-gradient(90deg,
+            var(--mainColor),
+            var(--subColor));
     transition: --mainColor 500ms, --subColor 500ms;
 }
 
-.ofertas__box > button:hover{
-    --mainColor:rgb(209, 81, 255);
-    --subColor:rgb(145, 66, 255);
+.ofertas__box>button:hover {
+    --mainColor: rgb(209, 81, 255);
+    --subColor: rgb(145, 66, 255);
 }
 
-.ofertas > h2{
+.ofertas>h2 {
     grid-area: 1 / 1 / 1 / -1;
     /* background-color: green; */
     display: flex;
@@ -373,27 +322,151 @@ span:last-child{
     align-items: center;
 }
 
-/* FOOTER */
+/* /////// */
+/* SABORES */
+/* /////// */
 
-footer {
-    height: 5vh;
-    background-color: var(--mainColor);
+.sabores {
+    border-bottom: 1px solid var(--borderColor2);
+}
+
+.sabores__title {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    color: black;
+    margin-bottom: 3em;
+    padding: 0 5em;
+    /* background-color: green; */
+}
+
+.sabores__title>h3 {
+    font-size: 3rem;
+}
+
+.sabores__title>p {
+    /* background-color: red; */
+    display: flex;
+    /* justify-content: center; */
     align-items: center;
 }
+
+.sabores__title>p>span {
+    font-weight: bold;
+    padding: 0.2em;
+}
+
+.sabores__container {
+    width: 100%;
+    border-top: 1px solid var(--borderColor2);
+    padding: 2em;
+    transition: background-color 500ms;
+}
+
+.sabores__container__items {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5em;
+    /* background-color: red; */
+}
+
+.sabores__container__items>* {
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: color 500ms;
+}
+
+.sabores__plus {
+    display: flex;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.girar-plus-abrir {
+    animation: rotacionCruz 500ms;
+}
+
+.girar-plus-cerrar {
+    animation: rotacionCruzCerrar 500ms;
+}
+
+.sabores__container:hover .sabores__container__items>* {
+    color: rgba(0, 0, 0, 1);
+}
+
+.sabores__container__list {
+    color: black;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: padding 500ms, grid-template-rows 500ms, background-color 500ms;
+}
+
+/* CLASE QUE SE AÑADE MEDIANTE TOGLE EN JAVASCRPIT */
+.open-box {
+    grid-template-rows: 3fr;
+    padding: 5em 0;
+}
+
+.sabores__container__list ul {
+    overflow: hidden;
+    list-style: none;
+    margin: 0 5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1em;
+}
+
+.ul__img {
+    grid-area: 1 / 4 / 5 / -1;
+    background-image: url(../Images/cheesecake.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* SABORES NUEVOS */
+
+li[nuevo]::after {
+    content: "New";
+    position: relative;
+    background-color: var(--mainColor);
+    color: white;
+    border-radius: 5px;
+    margin: 0 0.5em;
+    padding: 0.2em;
+}
+
+/* ////// */
+/* FOOTER */
+/* ////// */
 
 footer p {
     font-size: 0.8rem
 }
 
 .redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    background-color: var(--mainColor);
+    height: 5vh;
     list-style: none;
     display: flex;
 }
 
 .redes__item {
     padding: 0 1rem;
+}
+
+.footer__div {
+    color: rgb(160, 160, 160);
+    /* background-color: red; */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 3em;
 }
 
 /* SCROLLBAR */
@@ -403,23 +476,100 @@ footer p {
     display: none;
 }
 
+/* 
+////////////////////////////////////////
+MediaQuerys
+////////////////////////////////////////
+*/
+
 @media only screen and (max-width:480px) {
-    .inicio{
-        grid-template:2fr 1fr / 1fr ;
+    .inicio {
+        grid-template: 2fr 1fr / 1fr;
     }
 
-    .inicio__box{
+    .inicio__box {
         /* background-color: red; */
         border-bottom: 1px solid var(--borderColor);
     }
 
-    .ofertas{
-        grid-template: 100px 1fr  / 1fr 1fr 1fr;
-        grid-template: 100px repeat(3, 1fr) / 1fr ;
+    .ofertas {
+        grid-template: 100px 1fr / 1fr 1fr 1fr;
+        grid-template: 100px repeat(3, 1fr) / 1fr;
     }
 
-    .ofertas__box{
+    .ofertas__box {
         display: flex;
         flex-direction: row;
+    }
+}
+
+/* 
+////////////////////////////////////////
+Animaciones
+////////////////////////////////////////
+*/
+
+
+@keyframes rotacionCruz {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotacionCruzCerrar {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes rotacionHelado {
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes rotacionHeladoReversa {
+
+    0% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(-15deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes rotacion {
+
+    0% {
+        transform: rotate(-5deg) translateX(10px) translateY(-30px);
+    }
+
+    50% {
+        transform: rotate(15deg) translateX(30px) translateY(-80px);
+    }
+
+    100% {
+        transform: rotate(-5deg) translateX(10px) translateY(-30px);
     }
 }
