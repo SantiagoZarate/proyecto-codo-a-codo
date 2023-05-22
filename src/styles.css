@@ -29,7 +29,6 @@
 }
 
 body {
-    /* background-color: rgb(20, 20, 20); */
     color: white;
 }
 
@@ -65,7 +64,6 @@ a:hover {
 .header-scroll {
     backdrop-filter: blur(0.3rem);
     background-color: rgba(255, 255, 255, 0.1);
-    /* border-bottom: 1px solid var(--borderColor2); */
 }
 
 .header__ul {
@@ -125,7 +123,6 @@ main>* {
 }
 
 .inicio__box__img {
-    /* background-color: red; */
     position: absolute;
     background-image: url(../Images/pote_helado.png);
     width: 25rem;
@@ -136,7 +133,6 @@ main>* {
     background-position: center;
     z-index: 2;
     top: 20%;
-    /* left: 3%; */
     animation: 8s rotacionHeladoReversa ease-in-out infinite;
 }
 
@@ -209,6 +205,30 @@ main>* {
 .inicio__box:last-child>button:hover::after {
     left: 0%;
 }
+/* /////////////// */
+/* NAV COMPONENTES */
+/* /////////////// */
+.nav__componentes > ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3em;
+}
+
+.nav__componentes > ul > li{
+    border: none;
+    padding: 1em 2em;
+    color: var(--inactiveText);
+    background-color: var(--mainColor);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: color 500ms;
+}
+
+.nav__componentes > ul >li:hover{
+    color: white;
+}
 
 /* /////// */
 /* OFERTAS */
@@ -216,110 +236,79 @@ main>* {
 
 .ofertas {
     width: 100%;
-    height: 50rem;
+    /* height: 50rem; */
     border: 1px solid var(--borderColor2);
     background-color: var(--greyBgColor);
-}
-
-.ofertas {
-    display: grid;
-    grid-template: 100px 1fr / 1fr 1fr 1fr;
-    gap: 1rem;
-    padding: 2rem;
-}
-
-.ofertas__box {
-    /* max-width: 20rem; */
-    /* height: 50%; */
-    max-width: 350px;
-    background-color: var(--ofertasColor);
-    border: 1px solid var(--borderColor2);
-    color: black;
     display: flex;
-    gap: 2rem;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    border-radius: 10px;
+    padding: 3em;
+}
+
+.ofertas > header{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 700px;
+    margin-bottom: 3em;
+}
+
+.articulos{
+    background-color: green;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    border-radius: 20px;
     overflow: hidden;
 }
 
-.ofertas__box__img {
+.ofertas__grande{
+    background-color: green;
+    grid-area: 1 / 1 / 4 / 3;
+    background-image: url(../Images/chocolate-ice-cream.jpg);
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: end;
+    position: relative;
+}
+
+.ofertas__grande::after{
+    position: absolute;
     width: 100%;
-    height: 60%;
-    /* height: 200px; */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 8rem;
-    border-bottom: 1px solid var(--borderColor2);
+    height: 100%;
+    content: "";
+    background: linear-gradient(0deg, rgba(0,0,0,1) , rgba(0,0,0,0)70%);
 }
 
-.helado__rosa {
-    background: url(../Images/icecream2.png);
-    /* background-color: red; */
-    background-size: 8rem;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.helado__multi {
-    background-image: url(../Images/icecream3.png);
-}
-
-.helado__amarillo {
-    background: url(../Images/icecream4.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 8rem;
-}
-
-.ofertas__box p {
+.ofertas__grande__informacion{
+    width: 100%;
+    padding: 2em;
+    /* background-color: rgba(0, 0, 0, 0.5); */
     display: flex;
-    text-align: center;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
-    justify-content: center;
-}
-
-span {
-    margin: 0.5rem 0;
-}
-
-.ofertas__box span:first-child {
-    color: rgba(0, 0, 0, 0.5);
-    text-decoration: line-through;
-    text-decoration-color: rgba(0, 0, 0, 0.5);
-}
-
-.ofertas__box span:last-child {
-    font-weight: 600;
-    color: var(--mainColor);
-}
-
-.ofertas__box>button {
-    cursor: pointer;
-    padding: 1rem 2rem;
-    border: 1px solid rgb(188, 3, 255);
-    border-radius: 10px;
-    background: linear-gradient(90deg,
-            var(--mainColor),
-            var(--subColor));
-    transition: --mainColor 500ms, --subColor 500ms;
-}
-
-.ofertas__box>button:hover {
-    --mainColor: rgb(209, 81, 255);
-    --subColor: rgb(145, 66, 255);
-}
-
-.ofertas>h2 {
-    grid-area: 1 / 1 / 1 / -1;
-    /* background-color: green; */
-    display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.ofertas__grande__informacion > button{
+    padding:0.5em;
+    border-radius: 10px;
+    border: none;
+}
+
+.ofertas__pequeñas{
+    background-color: yellow;
+    grid-area: 1 / 3 / 4 / 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.ofertas__pequeñas__articulo{
+    background-color: aqua;
+    border-bottom: 1px solid black;
+    padding: 4em 2em;
 }
 
 /* /////// */
@@ -366,7 +355,6 @@ span {
     display: flex;
     justify-content: space-between;
     padding: 0 5em;
-    /* background-color: red; */
 }
 
 .sabores__container__items>* {
@@ -379,7 +367,6 @@ span {
 .sabores__plus {
     display: flex;
     align-items: center;
-    /* background-color: red; */
 }
 
 .girar-plus-abrir {
