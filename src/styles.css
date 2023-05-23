@@ -18,6 +18,7 @@
     --borderColor2: rgba(0, 0, 0, 0.2);
     --greyBgColor: rgba(0, 0, 0, 0.1);
     --inactiveText: rgb(255, 255, 255, 0.5);
+    --inputFormBg : rgba(255,255,255);
 }
 
 * {
@@ -558,6 +559,49 @@ li[nuevo]::after {
     border-radius: 20px;
 }
 
+.acerca__trabaja > h2{
+    margin-bottom: 1em;
+}
+
+.acerca__trabaja__formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.acerca__trabaja__formulario div{
+    display: flex;
+    flex-direction: column;
+}
+
+.acerca__trabaja__formulario label{
+    margin-bottom: 1em;
+}
+
+.acerca__trabaja__formulario span{
+    color: red;
+}
+
+.acerca__trabaja__formulario input{
+    border-radius: 50px;
+    background-color: var(--inputFormColor);
+    border: 1px solid #110f27;
+    padding: 1em; 
+}
+
+.acerca__trabaja__formulario__submit{
+    cursor: pointer;
+}
+
+.form--error{
+    animation: formularioError normal 700ms ease-in;
+}
+
+.form--aceptado{
+    animation: formularioAceptado normal 700ms ease-in;
+}
 /* ////// */
 /* FOOTER */
 /* ////// */
@@ -693,5 +737,33 @@ Animaciones
 
     100% {
         transform: rotate(-5deg) translateX(10px) translateY(-30px);
+    }
+}
+
+@keyframes formularioAceptado {
+    0%{
+        background-color: var(--inputFormColor);
+    }
+
+    10%{
+        background-color: rgb(121, 219, 124);
+    }
+
+    100%{
+        background-color: var(--inputFormColor);
+    }
+}
+
+@keyframes formularioError {
+    0%{
+        background-color: var(--inputFormColor);
+    }
+
+    10%{
+        background-color: rgb(219, 121, 121);
+    }
+
+    100%{
+        background-color: var(--inputFormColor);
     }
 }

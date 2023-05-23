@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="app.js" defer></script>
     <title>Casa de comidas page</title>
@@ -77,14 +77,33 @@
                 </div>
             </div>
 
-            <div class="acerca__mapa">
+            <!-- <div id="form" class="acerca__mapa">
                 <h2>Nuestra ubicacion</h2>
                 <div class="acerca__mapa__iframe">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.8290579340337!2d-58.44729622311702!3d-34.58319167296179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5ec34cc7d95%3A0x54a8faafd6e406c0!2sHelader%C3%ADa%20Scannapieco!5e0!3m2!1ses!2sar!4v1684874251254!5m2!1ses!2sar" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-            </div>
-            <div class="acerca__formulario">
+            </div> -->
 
+            <div class="acerca__trabaja">
+                <h2>TRABAJA CON NOSOTROS!</h2>
+                <form action="" class="acerca__trabaja__formulario" id="form">
+                    <div>
+                        <label for="name">Nombre Completo<span>*</span></label>
+                        <input type="text" name="name" id="name" placeholder="Lionel Messi">
+                    </div>
+
+                    <div>
+                        <label for="email">Correo electrónico<span>*</span></label>
+                        <input type="text" name="email" id="email" placeholder="ejemplo@gmail.com">
+                    </div>
+
+                    <div>
+                        <label for="message">Como nos conociste?</label>
+                        <textarea name="message" id="message" cols="30" rows="10" style="resize: none"></textarea>
+                    </div>
+
+                    <input type="submit" class="acerca__trabaja__formulario__submit">
+                </form>
             </div>
         </section>
 
