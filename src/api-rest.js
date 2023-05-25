@@ -3,7 +3,6 @@ export function fetchData(htmlElement){
         .then(data => data.json())
         .then(data => {
             for(let i = 0; i < 3; i++){
-                console.log(data)
                 let user = data.results[i]
                 htmlElement.innerHTML += `
                     <div class="user">

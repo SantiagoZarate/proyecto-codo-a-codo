@@ -13,22 +13,22 @@
 
 <body>
     <header class="header">
-        <div class="header__logo"><i class="fa fa-home"></i></div>
+        <div class="header__logo"><a href="#inicio"><i class="fa fa-home"></a></i></div>
 
         <ul class="header__ul">
-            <li class="header__ul-item"><a href="#">ORDENAR</a></li>
-            <li class="header__ul-item"><a href="sabores.html">SABORES</a></li>
-            <li class="header__ul-item"><a href="#">SUCURSALES</a></li>
+            <li class="header__ul-item"><a href="#ofertas">OFERTAS</a></li>
+            <li class="header__ul-item"><a href="#sabores">SABORES</a></li>
+            <li class="header__ul-item"><a href="#acerca">ACERCA DE NOSOTROS</a></li>
+            <li class="header__ul-item"><a href="#opiniones">RESEÑAS</a></li>
         </ul>
     </header>
 
     <main>
-        <!-- <section class="inicio" id="inicio">
+        <section class="inicio" id="inicio">
             <div class="inicio__box">
                 <div class="inicio__box__img"></div>
                 <div class="inicio__box__img"></div>
             </div>
-
             <div class="inicio__box">
                 <h1>HELADERIA</h1>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam eligendi ducimus, corrupti,
@@ -37,21 +37,12 @@
                 </p>
                 <button>Ordenar</button>
             </div>
-        </section> -->
-
-        <nav class="nav__componentes">
-            <ul>
-                <li>Ofertas</li>
-                <li>Sabores</li>
-                <li>Opiniones</li>
-                <li>Acerca de nosotros</li>
-            </ul>
-        </nav>
+        </section>
 
         <!-- OFERTAS -->
-        <!-- <section class="ofertas">
+        <section class="ofertas" id="ofertas">
             <header>
-                <h2>Ofertas</h2>
+                <h2>Ofertas!</h2>
                 <p>Aprovechá las ofertas que tenemos para vos!</p>
             </header>
             <div class="articulos">
@@ -61,7 +52,7 @@
                             <h2>2KG DE HELADO</h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, inventore!</p>
                         </div>
-                        <button class="boton">Comprar</button>
+                        <button class="boton">Ordenar!</button>
                     </div>
                 </div>
 
@@ -70,8 +61,8 @@
                         <div class="ofertas__pequeñas__articulo__img"></div>
                         <div class="ofertas__pequeñas__articulo__data">
                             <p>
-                                <span>Dulce de leche</span>
-                                <span>$1500</span>
+                                <span>1KG - Dulce de leche</span>
+                                <span>$1299.99</span>
                             </p>
                             <button>Ordenar!</button>
                         </div>
@@ -80,8 +71,8 @@
                         <div class="ofertas__pequeñas__articulo__img"></div>
                         <div class="ofertas__pequeñas__articulo__data">
                             <p>
-                                <span>Vainilla</span>
-                                <span>$1500</span>
+                                <span>1KG - Vainilla</span>
+                                <span>$1299.99</span>
                             </p>
                             <button>Ordenar!</button>
                         </div>
@@ -91,18 +82,18 @@
                         <div class="ofertas__pequeñas__articulo__img"></div>
                         <div class="ofertas__pequeñas__articulo__data">
                             <p>
-                                <span>Torta</span>
-                                <span>$1500</span>
+                                <span>1KG - Mantecol</span>
+                                <span>$1299.99</span>
                             </p>
                             <button>Ordenar!</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
         <!-- SABORES -->
-        <!-- <section class="sabores">
+        <section class="sabores" id="sabores">
             <div class="sabores__title">
                 <h3>Sabores!</h3>
                 <p>Todos los sabores son de obra <span>artesanal</span></p>
@@ -216,10 +207,10 @@
                     </ul>
                 </div>
             </div>
-        </section> -->
+        </section>
 
         <!--ACERCA DE NOSOTROS-->
-        <section class="acerca">
+        <section class="acerca" id="acerca">
 
             <div class="acerca__texto">
                 <div class="acerca__texto__titulos">
@@ -271,15 +262,17 @@
                 </div>
             </div>
 
-            <div id="form" class="acerca__mapa">
+            <div id="form" class="acerca__ubicacion">
                 <h2>NUESTRA UBICACION</h2>
-                <div class="acerca__mapa__iframe">
+                <div class="acerca__ubicacion__iframe">
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt rerum qui quod explicabo facilis laboriosam, cupiditate pariatur est quae soluta earum accusamus sequi veritatis saepe numquam? Commodi quam eaque eligendi.</p>
-                    <iframe
+                    <div class="acerca__ubicacion__iframe__mapa">
+                        <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.8290579340337!2d-58.44729622311702!3d-34.58319167296179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5ec34cc7d95%3A0x54a8faafd6e406c0!2sHelader%C3%ADa%20Scannapieco!5e0!3m2!1ses!2sar!4v1684874251254!5m2!1ses!2sar"
-                         style="border:0;" allowfullscreen="" loading="lazy"
+                        width="1240" height="400"
+                        style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <!-- width="800" height="600" -->
+                    </div>
                 </div>
             </div>
 
@@ -306,7 +299,7 @@
             </div>
         </section>
     
-        <section class="opiniones">
+        <section class="opiniones" id="opiniones">
             <div class="opiniones__header">
                 <h2>OPIONES DE NUESTROS CLIENTES</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, accusantium.</p>

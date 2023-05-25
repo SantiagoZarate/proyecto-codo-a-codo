@@ -1,10 +1,10 @@
-// IMPORTACIONES
+// IMPORTACIONES --------------------------------------------------------------
 import { fetchData } from "./api-rest.js";
 
-// VARIABLES
+// VARIABLES --------------------------------------------------------------
 const headerElement = document.querySelector(".header");
 const saboresElement = document.querySelectorAll("[sabores]");
-// const formularioElement = document.querySelector("#form");
+const formularioElement = document.querySelector("#form");
 const opinionesElement = document.querySelector(".opiniones--app");
 const dominios = [
     "gmail",
@@ -13,11 +13,14 @@ const dominios = [
     "log",
     "outlook"
 ]
-// ADD EVENT LISTENERS
-
+// ADD EVENT LISTENERS ----------------------------------------------------
+// CAMBIAR ESTILO AL NAVBAR AL SCROLLEAR
 window.addEventListener("scroll", cambiarHeader);
-// formularioElement.addEventListener("submit", handleSumbit);
 
+// MANEJO DEL FORMULARIO
+formularioElement.addEventListener("submit", handleSumbit);
+
+// ANIMACIONES AL ABRIR EL MENU ACORDEON DE SABORES
 saboresElement.forEach(element => {
     element.addEventListener("click", function () {
         expandirInformacion(element);
@@ -25,7 +28,10 @@ saboresElement.forEach(element => {
     })
 });
 
-// FUNCIONES
+// REQUEST A LA API
+fetchData(opinionesElement);
+
+// FUNCIONES --------------------------------------------------------------
 function cambiarHeader() {
     headerElement.classList.toggle("header-scroll", window.scrollY > 0);
 }
@@ -41,10 +47,9 @@ function animarCruz(e) {
     boxConLaCruz.classList.toggle("girar-plus-cerrar");
 }
 
-fetchData(opinionesElement);
+function handleSumbit(event) {
+    event.preventDefault();
 
-function handleSumbit() {
-    // event.preventDefault();
     //  CAMPO DEL NOMBRE
     let FormName = formularioElement[0];
 
@@ -60,7 +65,6 @@ function handleSumbit() {
     } else {
         if (!handleMail(FormEmail)) {
             agregarAnimacion(FormEmail, "form--error")
-            // FormEmail.classList.toggle("form--error")
         }
 
         if (!handleName(FormName)) {

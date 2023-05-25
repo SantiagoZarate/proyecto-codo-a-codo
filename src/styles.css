@@ -19,6 +19,8 @@
     --greyBgColor: rgba(0, 0, 0, 0.1);
     --inactiveText: rgb(255, 255, 255, 0.5);
     --inputFormBg : rgba(255,255,255);
+
+    --maxWidth: 1024px;
 }
 
 * {
@@ -36,6 +38,7 @@ body {
 a {
     text-decoration: none;
     color: var(--inactiveText);
+    color: #111126;
     transition: color 500ms;
 }
 
@@ -60,6 +63,7 @@ a:hover {
 
 .header__logo {
     font-size: 1.5rem;
+    color: #111126;
 }
 
 .header-scroll {
@@ -78,8 +82,14 @@ a:hover {
 
 /* MAIN */
 
-main>* {
-    margin-bottom: 6rem;
+main{
+    margin-bottom: 6em;
+}
+
+section:not(.inicio){
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+    margin-bottom: 10em;
 }
 
 /* ////// */
@@ -96,6 +106,7 @@ main>* {
     background: var(--mainColor);
     z-index: -1;
     box-shadow: 0px 0px 100px inset rgba(0, 0, 0, 0.327);
+    margin-bottom: 6em;
 }
 
 .inicio::after {
@@ -206,51 +217,29 @@ main>* {
 .inicio__box:last-child>button:hover::after {
     left: 0%;
 }
-/* /////////////// */
-/* NAV COMPONENTES */
-/* /////////////// */
-.nav__componentes > ul{
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 3em;
-}
-
-.nav__componentes > ul > li{
-    border: none;
-    padding: 1em 2em;
-    color: var(--inactiveText);
-    background-color: var(--mainColor);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
-    cursor: pointer;
-    transition: color 500ms;
-}
-
-.nav__componentes > ul >li:hover{
-    color: white;
-}
-
 /* /////// */
 /* OFERTAS */
 /* /////// */
 
 .ofertas {
     width: 100%;
-    border: 1px solid var(--borderColor2);
-    background-color: var(--greyBgColor);
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* padding: 3em; */
 }
 
 .ofertas > header{
-    background-color: red;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-width: 700px;
-    margin-bottom: 3em;
+    width: 100%;
+    padding: 0 5em;
+    color: #333865;
+}
+
+.ofertas >header> h2{
+    font-size: 3rem;
 }
 
 .articulos{
@@ -272,6 +261,7 @@ main>* {
     display: flex;
     align-items: end;
     position: relative;
+    box-shadow: 6px 6px 0 #111126;
 }
 
 .ofertas__grande::after{
@@ -293,9 +283,17 @@ main>* {
 }
 
 .ofertas__grande__informacion > button{
-    padding:0.5em;
-    border-radius: 10px;
+    padding:1.5em;
+    border-radius: 20px;
     border: none;
+    color: #ffc7f4;
+    background-color: var(--mainColor);
+    transition: box-shadow 500ms;
+    cursor: pointer;
+}
+
+.ofertas__grande__informacion > button:hover{
+    box-shadow: 0 0 10px #e9d9ff56 ;
 }
 
 .ofertas__pequeñas{
@@ -323,16 +321,24 @@ main>* {
     background: url(../Images/chocolate-icecream.jpg);
     background-position: center;
     background-size: cover;
+    transition: transform 500ms;
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.ofertas__pequeñas__articulo__img:hover{
+    transform: scale(1.1);
 }
 
 .ofertas__pequeñas__articulo__data{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
+    z-index: 1;
+    background-color: #110f27;
 }
 
 .ofertas__pequeñas__articulo__data > p{
-    background-color: #110f27;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -341,14 +347,18 @@ main>* {
 }
 
 .ofertas__pequeñas__articulo__data > button{
-    width: 100%;
-    height: 100%;
+    margin: 0.5em;
     border: none;
     color: #ffc7f4;
     font-weight: bold;
     background-color: var(--mainColor);
-    border-radius: 20px 0 0 20px;
+    border-radius: 20px;
     cursor: pointer;
+    transition: box-shadow 500ms;
+}
+
+.ofertas__pequeñas__articulo__data > button:hover{
+    box-shadow: 0 0 10px #e9d9ff56 ;
 }
 
 .vainilla  .ofertas__pequeñas__articulo__img{
@@ -377,17 +387,16 @@ main>* {
     color: black;
     margin-bottom: 3em;
     padding: 0 5em;
-    /* background-color: green; */
 }
 
 .sabores__title>h3 {
     font-size: 3rem;
+    color: #333865;
 }
 
 .sabores__title>p {
-    /* background-color: red; */
     display: flex;
-    /* justify-content: center; */
+    color: #333865;
     align-items: center;
 }
 
@@ -411,7 +420,7 @@ main>* {
 
 .sabores__container__items>* {
     font-size: 2rem;
-    color: rgba(0, 0, 0, 0.5);
+    color: #333865;
     cursor: pointer;
     transition: color 500ms;
 }
@@ -457,7 +466,39 @@ main>* {
 
 .ul__img {
     grid-area: 1 / 4 / 5 / -1;
+    background-image: url(../Images/vainilla-cookies.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#cremas .ul__img{
+    grid-area: 1 / 4 / 5 / -1;
+    background-image: url(../Images/stracciatella.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#frutales_al_agua .ul__img{
+    grid-area: 1 / 4 / 5 / -1;
     background-image: url(../Images/cheesecake.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#chocolates .ul__img{
+    grid-area: 1 / 4 / 5 / -1;
+    background-image: url(../Images/menta-chocolate.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#dulce_de_leche .ul__img{
+    grid-area: 1 / 4 / 5 / -1;
+    background-image: url(../Images/dulce-de-leche.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -480,8 +521,6 @@ li[nuevo]::after {
 
 .acerca{
     padding: 3em;
-    max-width: 1000px;
-    margin: 0 auto;
     color: #111126;
 }
 
@@ -501,6 +540,7 @@ li[nuevo]::after {
 .acerca__texto__titulos > div{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 2em;
 }
 
@@ -512,7 +552,7 @@ li[nuevo]::after {
 .acerca__texto__titulos img{
     background-color: green;
     max-width: 250px;
-    border-radius: 20px;
+    border-radius: 50%;
 }
 
 .acerca__texto__titulos > h2{
@@ -544,25 +584,37 @@ li[nuevo]::after {
     margin-bottom: 1em;
 }
 
-.acerca__mapa {
+.acerca__ubicacion {
     margin-bottom: 6em;
 }
 
-.acerca__mapa > h2{
+.acerca__ubicacion > h2{
     margin-bottom: 1em;
 }
 
-.acerca__mapa__iframe{
+.acerca__ubicacion__iframe{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-radius: 20px;
-    /* background-color: red; */
+    grid-template-rows: min-content repeat(3, 1fr);
     padding: 2em;
+    border-radius: 20px;
+    gap: 1em;
     align-items: center;
     justify-content: center;
 }
-.acerca__mapa__iframe p{
-    grid-column: span 2;
+
+.acerca__ubicacion__iframe p{
+    text-align: justify;
+}
+
+.acerca__ubicacion__iframe__mapa{
+    border: 1px solid #333865;
+    grid-row: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: fit-content;
 }
 
 .acerca__trabaja > h2{
@@ -609,6 +661,11 @@ li[nuevo]::after {
 
 .acerca__trabaja__formulario__submit{
     cursor: pointer;
+    transition: background 500ms ease;
+}
+
+.acerca__trabaja__formulario__submit:hover{
+    background-color: #e9d9ff;
 }
 
 .form--error{
@@ -623,8 +680,6 @@ li[nuevo]::after {
 /* /////////// */
 
 .opiniones{
-    max-width: 1280px;
-    margin: 0 auto;
     padding: 3em;
 }
 
@@ -685,7 +740,6 @@ footer p {
 
 .footer__div {
     color: rgb(160, 160, 160);
-    /* background-color: red; */
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -705,25 +759,48 @@ footer p {
 MediaQuerys
 ////////////////////////////////////////
 */
-
-@media only screen and (max-width:480px) {
+/* TABLETS */
+@media screen and (max-width:768px){
     .inicio {
         grid-template: 2fr 1fr / 1fr;
     }
 
-    .inicio__box {
-        /* background-color: red; */
-        border-bottom: 1px solid var(--borderColor);
+    .inicio__box__img{
+        transform: translateY(-10px);
     }
 
-    .ofertas {
-        grid-template: 100px 1fr / 1fr 1fr 1fr;
-        grid-template: 100px repeat(3, 1fr) / 1fr;
+    .articulos{
+        grid-template: repeat(3, 1fr) / 1fr;
+        /* background-color: green; */
     }
 
-    .ofertas__box {
-        display: flex;
-        flex-direction: row;
+    .ofertas__grande{
+        grid-area: 1 / 1 / 2 / 1;
+    }
+
+    .ofertas__pequeñas{
+        grid-area: 2 / 1 / 4 / 1 ;
+    }
+
+    .acerca__texto__titulos > div{
+        flex-wrap: wrap;
+    }
+
+    .acerca__texto__tarjetas__grid{
+        grid-template: repeat(3, 1fr) / repeat(2, 1fr) ;
+    }
+
+    .opiniones--app{
+        flex-wrap: wrap;
+    }
+}
+
+/* SMART PHONES */
+@media screen and (max-width:480px) {
+
+
+    .acerca__texto__tarjetas__grid{
+        grid-template: repeat(6, 1fr) / 1fr ;
     }
 }
 
