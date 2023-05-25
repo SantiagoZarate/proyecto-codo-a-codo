@@ -170,10 +170,6 @@ section:not(.inicio){
     font-size: 3em;
 }
 
-.mania{
-    color: #db79ff;
-}
-
 .inicio__box:first-child {
     flex-wrap: wrap;
 }
@@ -189,6 +185,11 @@ section:not(.inicio){
     align-items: center;
     gap: 1rem;
     border: 1px solid var(--mainColor);
+    max-width: 600px;
+}
+
+.mania{
+    color: #db79ff;
 }
 
 .inicio__box__texto p {
