@@ -6,19 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="../Images/pote_helado.png">
     <link rel="stylesheet" href="styles.css">
-    <script type="module" src="app.js" defer></script>
-    <title>Casa de comidas page</title>
+    <script type="module" src="main.js" defer></script>
+    <title>Heladomania!</title>
 </head>
 
 <body>
     <header class="header">
-        <div class="header__logo"><i class="fa fa-home"></i></div>
+        <div class="header__logo"><a href="#inicio"><i class="fa fa-home"></a></i></div>
 
         <ul class="header__ul">
-            <li class="header__ul-item"><a href="#">ORDENAR</a></li>
-            <li class="header__ul-item"><a href="sabores.html">SABORES</a></li>
-            <li class="header__ul-item"><a href="#">SUCURSALES</a></li>
+            <li class="header__ul-item"><a href="#ofertas">OFERTAS</a></li>
+            <li class="header__ul-item"><a href="#sabores">SABORES</a></li>
+            <li class="header__ul-item"><a href="#acerca">ACERCA DE NOSOTROS</a></li>
+            <li class="header__ul-item"><a href="#opiniones">RESEÑAS</a></li>
         </ul>
     </header>
 
@@ -28,41 +30,73 @@
                 <div class="inicio__box__img"></div>
                 <div class="inicio__box__img"></div>
             </div>
-
             <div class="inicio__box">
-                <h1>HELADERIA</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam eligendi ducimus, corrupti,
-                    veritatis vitae quia unde reiciendis id doloremque perferendis a necessitatibus. Quasi alias natus
-                    minus doloremque ex tenetur ipsum.
-                </p>
-                <button>Ordenar</button>
+                <div class="inicio__box__texto">
+                    <h1>Heladomania!</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam eligendi ducimus, corrupti,
+                        veritatis vitae quia unde reiciendis id doloremque perferendis a necessitatibus. Quasi alias natus
+                        minus doloremque ex tenetur ipsum.
+                    </p>
+                    <button>Ordenar</button>
+                </div>
             </div>
         </section>
 
-        <section class="ofertas">
-            <h2>OFERTAS</h2>
-            <div class="ofertas__box">
-                <div class="ofertas__box__img helado__rosa"></div>
-                <p><span>$1499.99</span><span>$999.99</span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, recusandae!</p>
-                <button>Ordenar!</button>
-            </div>
-            <div class="ofertas__box">
-                <div class="ofertas__box__img helado__multi"></div>
-                <p><span>$1999.99</span><span>$1299.99</span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, recusandae!</p>
-                <button>Ordenar!</button>
-            </div>
+        <!-- OFERTAS -->
+        <section class="ofertas" id="ofertas">
+            <header>
+                <h2>Ofertas!</h2>
+                <p>Aprovechá las ofertas que tenemos para vos!</p>
+            </header>
+            <div class="articulos">
+                <div class="ofertas__grande">
+                    <div class="ofertas__grande__informacion">
+                        <div>
+                            <h2>2KG DE HELADO</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, inventore!</p>
+                        </div>
+                        <button class="boton">Ordenar!</button>
+                    </div>
+                </div>
 
-            <div class="ofertas__box">
-                <div class="ofertas__box__img helado__amarillo"></div>
-                <p><span>$1499.99</span><span>$999.99</span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, recusandae!</p>
-                <button>Ordenar!</button>
+                <div class="ofertas__pequeñas">
+                    <div class="ofertas__pequeñas__articulo dulce-de-leche">
+                        <div class="ofertas__pequeñas__articulo__img"></div>
+                        <div class="ofertas__pequeñas__articulo__data">
+                            <p>
+                                <span>1KG - Dulce de leche</span>
+                                <span>$1299.99</span>
+                            </p>
+                            <button>Ordenar!</button>
+                        </div>
+                    </div>
+                    <div class="ofertas__pequeñas__articulo vainilla">
+                        <div class="ofertas__pequeñas__articulo__img"></div>
+                        <div class="ofertas__pequeñas__articulo__data">
+                            <p>
+                                <span>1KG - Vainilla</span>
+                                <span>$1299.99</span>
+                            </p>
+                            <button>Ordenar!</button>
+                        </div>
+                    </div>
+
+                    <div class="ofertas__pequeñas__articulo torta">
+                        <div class="ofertas__pequeñas__articulo__img"></div>
+                        <div class="ofertas__pequeñas__articulo__data">
+                            <p>
+                                <span>1KG - Mantecol</span>
+                                <span>$1299.99</span>
+                            </p>
+                            <button>Ordenar!</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="sabores">
+        <!-- SABORES -->
+        <section class="sabores" id="sabores">
             <div class="sabores__title">
                 <h3>Sabores!</h3>
                 <p>Todos los sabores son de obra <span>artesanal</span></p>
@@ -73,7 +107,7 @@
                     <div>Especiales</div>
                     <i class="fa fa-plus-circle sabores__plus girar-plus-cerrar"></i>
                 </div>
-                <div class="sabores__container__list" >
+                <div class="sabores__container__list">
                     <ul>
                         <li>Chocotorta</li>
                         <li>Torta de Limon</li>
@@ -86,12 +120,12 @@
                         <li nuevo>Amarena</li>
                         <li>Bon o Bon</li>
                         <li>Banana dolca</li>
-                        <li >Almendrado</li>
+                        <li>Almendrado</li>
                         <li class="ul__img"></li>
                     </ul>
                 </div>
             </div>
-            
+
             <div sabores class="sabores__container" id="cremas">
                 <div class="sabores__container__items">
                     <div>Cremas</div>
@@ -100,7 +134,7 @@
                 <div class="sabores__container__list">
                     <ul>
                         <li>Coco Split</li>
-                        <li >Americana</li>
+                        <li>Americana</li>
                         <li>Crema de higos</li>
                         <li nuevo>Crema del cielo</li>
                         <li>Crema Oreo</li>
@@ -115,7 +149,7 @@
                     </ul>
                 </div>
             </div>
-    
+
             <div sabores class="sabores__container" id="frutales_al_agua">
                 <div class="sabores__container__items">
                     <div>Frutales al agua</div>
@@ -137,7 +171,7 @@
                     </ul>
                 </div>
             </div>
-    
+
             <div sabores class="sabores__container" id="chocolates">
                 <div class="sabores__container__items">
                     <div>Chocolates</div>
@@ -157,7 +191,7 @@
                     </ul>
                 </div>
             </div>
-    
+
             <div sabores class="sabores__container" id="dulce_de_leche">
                 <div class="sabores__container__items">
                     <div>Dulce de leche</div>
@@ -177,6 +211,104 @@
                 </div>
             </div>
         </section>
+
+        <!--ACERCA DE NOSOTROS-->
+        <section class="acerca" id="acerca">
+
+            <div class="acerca__texto">
+                <div class="acerca__texto__titulos">
+                    <h2>NUESTRA HISTORIA</h2>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ipsa alias nihil! A ullam
+                            distinctio praesentium quasi doloremque voluptatem dolorem id minima, consequatur omnis non
+                            fugit eaque ea error. Consequatur?
+                            <br><br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, velit!Lorem ipsum dolor
+                            sit amet consectetur adipisicing elit. Repellat, velit!
+                            <br><br>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ipsa alias nihil! A
+                            ullam distinctio praesentium quasi doloremque voluptatem dolorem id minima, consequatur
+                            omnis non fugit eaque ea error. Consequatur?
+                        </p>
+                        <img src="../Images/Ice_cream_suckers.jpg" alt="">
+                    </div>
+                </div>
+                <div class="acerca__texto__tarjetas">
+                    <h2>NUESTROS VALORES<h2>
+                            <ul class="acerca__texto__tarjetas__grid">
+                                <li class="acerca__texto__tarjetas__grid__item"><i class="fa fa-thumbs-up"></i>
+                                    <h3>Calidad
+                                    </h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores accusantium
+                                    esse harum? Libero, totam dicta?
+                                </li>
+                                <li class="acerca__texto__tarjetas__grid__item"><i class="fa fa-server"></i>
+                                    <h3>Servicios</h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+                                    accusantium esse harum? Libero, totam dicta?
+                                </li>
+                                <li class="acerca__texto__tarjetas__grid__item"><i class="fa fa-history"></i>
+                                    <h3>Integridad</h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+                                    accusantium esse harum? Libero, totam dicta?
+                                </li>
+                                <li class="acerca__texto__tarjetas__grid__item"><i class="fa fa-chain"></i>
+                                    <h3>Integración</h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+                                    accusantium esse harum? Libero, totam dicta?
+                                </li>
+                                <li class="acerca__texto__tarjetas__grid__item"><i class="fa fa-hand-grab-o"></i>
+                                    <h3>Compromiso</h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+                                    accusantium esse harum? Libero, totam dicta?
+                                </li>
+                                <li class="acerca__texto__tarjetas__grid__item"><i class="fa fa-area-chart"></i>
+                                    <h3>Progreso</h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+                                    accusantium esse harum? Libero, totam dicta?
+                                </li>
+                            </ul>
+                </div>
+            </div>
+
+            <div class="acerca__ubicacion">
+                <h2>NUESTRA UBICACION</h2>
+                <div class="acerca__ubicacion__iframe">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt rerum qui quod explicabo facilis laboriosam, cupiditate pariatur est quae soluta earum accusamus sequi veritatis saepe numquam? Commodi quam eaque eligendi.</p>
+                    <div class="acerca__ubicacion__iframe__mapa">
+                        <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.8290579340337!2d-58.44729622311702!3d-34.58319167296179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5ec34cc7d95%3A0x54a8faafd6e406c0!2sHelader%C3%ADa%20Scannapieco!5e0!3m2!1ses!2sar!4v1684874251254!5m2!1ses!2sar"
+                        width="1240" height="400"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="acerca__trabaja">
+                <h2>TRABAJA CON NOSOTROS!</h2>
+                <form class="acerca__trabaja__formulario" id="form">
+                    <div>
+                        <label for="name">Nombre Completo<span title="Requerido">*</span></label>
+                        <input type="text" name="name" id="name" placeholder="Lionel Messi">
+                    </div>
+
+                    <div>
+                        <label for="email">Correo electrónico<span title="Requerido">*</span></label>
+                        <input type="text" name="email" id="email" placeholder="ejemplo@gmail.com">
+                    </div>
+
+                    <div>
+                        <label for="message">Como nos conociste?</label>
+                        <textarea name="message" id="message" cols="30" rows="10" style="resize: none"></textarea>
+                    </div>
+
+                    <input id="form__button" type="submit" class="acerca__trabaja__formulario__submit">
+                </form>
+            </div>
+        </section>
+    
+        <section class="opiniones" id="opiniones">
+            <div class="opiniones__header">
+                <h2>OPIONES DE NUESTROS CLIENTES</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, accusantium.</p>
+            </div>
+            <div class="opiniones--app"></div>
+        </section>
     </main>
 
     <footer>
@@ -187,7 +319,6 @@
         </ul>
         <div class="footer__div">
             <p>Esta no es una pagina web oficial - 2023</p>
-            <!-- <p>hecho por Santiago Zarate</p> -->
             <p>Hecho con HTML, CSS y Javascript</p>
         </div>
     </footer>

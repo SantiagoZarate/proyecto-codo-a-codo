@@ -18,6 +18,9 @@
     --borderColor2: rgba(0, 0, 0, 0.2);
     --greyBgColor: rgba(0, 0, 0, 0.1);
     --inactiveText: rgb(255, 255, 255, 0.5);
+    --inputFormBg : rgba(255,255,255);
+
+    --maxWidth: 1024px;
 }
 
 * {
@@ -29,13 +32,13 @@
 }
 
 body {
-    /* background-color: rgb(20, 20, 20); */
     color: white;
 }
 
 a {
     text-decoration: none;
     color: var(--inactiveText);
+    color: #111126;
     transition: color 500ms;
 }
 
@@ -60,12 +63,12 @@ a:hover {
 
 .header__logo {
     font-size: 1.5rem;
+    color: #111126;
 }
 
 .header-scroll {
     backdrop-filter: blur(0.3rem);
     background-color: rgba(255, 255, 255, 0.1);
-    /* border-bottom: 1px solid var(--borderColor2); */
 }
 
 .header__ul {
@@ -79,8 +82,14 @@ a:hover {
 
 /* MAIN */
 
-main>* {
-    margin-bottom: 6rem;
+main{
+    margin-bottom: 6em;
+}
+
+section:not(.inicio){
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+    margin-bottom: 10em;
 }
 
 /* ////// */
@@ -97,6 +106,7 @@ main>* {
     background: var(--mainColor);
     z-index: -1;
     box-shadow: 0px 0px 100px inset rgba(0, 0, 0, 0.327);
+    margin-bottom: 6em;
 }
 
 .inicio::after {
@@ -120,12 +130,7 @@ main>* {
     height: 100%;
 }
 
-.inicio__box:first-child {
-    flex-wrap: wrap;
-}
-
 .inicio__box__img {
-    /* background-color: red; */
     position: absolute;
     background-image: url(../Images/pote_helado.png);
     width: 25rem;
@@ -136,7 +141,6 @@ main>* {
     background-position: center;
     z-index: 2;
     top: 20%;
-    /* left: 3%; */
     animation: 8s rotacionHeladoReversa ease-in-out infinite;
 }
 
@@ -162,18 +166,33 @@ main>* {
 }
 
 
-.inicio__box:last-child {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.inicio__box__texto > h1{
+    font-size: 3em;
 }
 
-.inicio__box>p {
+.inicio__box:first-child {
+    flex-wrap: wrap;
+}
+
+.inicio__box__texto {
+    background-color: #1b0f27;
+    padding: 2em;
+    color: #e9d9ff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid var(--mainColor);
+}
+
+.inicio__box__texto p {
     padding: 2rem;
     text-align: justify;
 }
 
-.inicio__box:last-child>button {
+.inicio__box__texto > button {
     border: none;
     color: white;
     font-weight: bold;
@@ -189,12 +208,12 @@ main>* {
     transition: color 300ms, box-shadow 500ms;
 }
 
-.inicio__box:last-child>button:hover {
-    color: black;
+.inicio__box__texto button:hover {
+    color: #110f27;
     box-shadow: 0 0 100px rgba(255, 255, 255, 0.6);
 }
 
-.inicio__box:last-child>button:after {
+.inicio__box__texto > button:after {
     width: 100%;
     height: 100%;
     content: "";
@@ -206,120 +225,163 @@ main>* {
     z-index: -1;
 }
 
-.inicio__box:last-child>button:hover::after {
+.inicio__box__texto >button:hover::after {
     left: 0%;
 }
-
 /* /////// */
 /* OFERTAS */
 /* /////// */
 
 .ofertas {
     width: 100%;
-    height: 50rem;
-    border: 1px solid var(--borderColor2);
-    background-color: var(--greyBgColor);
-}
-
-.ofertas {
-    display: grid;
-    grid-template: 100px 1fr / 1fr 1fr 1fr;
-    gap: 1rem;
-    padding: 2rem;
-}
-
-.ofertas__box {
-    /* max-width: 20rem; */
-    /* height: 50%; */
-    max-width: 350px;
-    background-color: var(--ofertasColor);
-    border: 1px solid var(--borderColor2);
-    color: black;
     display: flex;
-    gap: 2rem;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    border-radius: 10px;
+    /* padding: 3em; */
+}
+
+.ofertas > header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 5em;
+    color: #333865;
+}
+
+.ofertas >header> h2{
+    font-size: 3rem;
+}
+
+.articulos{
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: 2em;
+    padding: 3em;
     overflow: hidden;
 }
 
-.ofertas__box__img {
+.ofertas__grande{
+    grid-area: 1 / 1 / 4 / 3;
+    background-image: url(../Images/chocolate-ice-cream.jpg);
+    background-position: center;
+    border: 1px solid #110f27;
+    border-radius: 20px;
+    background-size:cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: end;
+    position: relative;
+    box-shadow: 6px 6px 0 #111126;
+}
+
+.ofertas__grande::after{
+    position: absolute;
     width: 100%;
-    height: 60%;
-    /* height: 200px; */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 8rem;
-    border-bottom: 1px solid var(--borderColor2);
+    height: 100%;
+    content: "";
+    border-radius: inherit;
+    background: linear-gradient(0deg, rgba(0,0,0,1) , rgba(0,0,0,0)70%);
 }
 
-.helado__rosa {
-    background: url(../Images/icecream2.png);
-    /* background-color: red; */
-    background-size: 8rem;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.helado__multi {
-    background-image: url(../Images/icecream3.png);
-}
-
-.helado__amarillo {
-    background: url(../Images/icecream4.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 8rem;
-}
-
-.ofertas__box p {
+.ofertas__grande__informacion{
+    width: 100%;
+    padding: 2em;
     display: flex;
-    text-align: center;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
-    justify-content: center;
-}
-
-span {
-    margin: 0.5rem 0;
-}
-
-.ofertas__box span:first-child {
-    color: rgba(0, 0, 0, 0.5);
-    text-decoration: line-through;
-    text-decoration-color: rgba(0, 0, 0, 0.5);
-}
-
-.ofertas__box span:last-child {
-    font-weight: 600;
-    color: var(--mainColor);
-}
-
-.ofertas__box>button {
-    cursor: pointer;
-    padding: 1rem 2rem;
-    border: 1px solid rgb(188, 3, 255);
-    border-radius: 10px;
-    background: linear-gradient(90deg,
-            var(--mainColor),
-            var(--subColor));
-    transition: --mainColor 500ms, --subColor 500ms;
-}
-
-.ofertas__box>button:hover {
-    --mainColor: rgb(209, 81, 255);
-    --subColor: rgb(145, 66, 255);
-}
-
-.ofertas>h2 {
-    grid-area: 1 / 1 / 1 / -1;
-    /* background-color: green; */
-    display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.ofertas__grande__informacion > button{
+    padding:1.5em;
+    border-radius: 20px;
+    border: none;
+    color: #ffc7f4;
+    background-color: var(--mainColor);
+    transition: box-shadow 500ms;
+    cursor: pointer;
+}
+
+.ofertas__grande__informacion > button:hover{
+    box-shadow: 0 0 10px #e9d9ff56 ;
+}
+
+.ofertas__pequeñas{
+    grid-area: 1 / 3 / 4 / 3;
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+}
+
+.ofertas__pequeñas__articulo{
+    min-height: 250px;
+    border: 1px solid #110f27;
+    box-shadow: 6px 6px 0 #111126;
+    border-radius: 20px;
+    background-size: contain;
+    background-position: center;
+    background-color: #110f27;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    overflow: hidden;
+}
+
+.ofertas__pequeñas__articulo__img{
+    grid-row: span 3;
+    background: url(../Images/chocolate-icecream.jpg);
+    background-position: center;
+    background-size: cover;
+    transition: transform 500ms;
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.ofertas__pequeñas__articulo__img:hover{
+    transform: scale(1.1);
+}
+
+.ofertas__pequeñas__articulo__data{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    z-index: 1;
+    background-color: #110f27;
+}
+
+.ofertas__pequeñas__articulo__data > p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+    grid-column: span 2;
+}
+
+.ofertas__pequeñas__articulo__data > button{
+    margin: 0.5em;
+    border: none;
+    color: #ffc7f4;
+    font-weight: bold;
+    background-color: var(--mainColor);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: box-shadow 500ms;
+}
+
+.ofertas__pequeñas__articulo__data > button:hover{
+    box-shadow: 0 0 10px #e9d9ff56 ;
+}
+
+.vainilla  .ofertas__pequeñas__articulo__img{
+    background: url(../Images/vanilla-bean-ice-cream.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.torta .ofertas__pequeñas__articulo__img{
+    background: url(../Images/main-header.png);
+    background-size: cover;
+    background-position: center;
 }
 
 /* /////// */
@@ -336,17 +398,16 @@ span {
     color: black;
     margin-bottom: 3em;
     padding: 0 5em;
-    /* background-color: green; */
 }
 
 .sabores__title>h3 {
     font-size: 3rem;
+    color: #333865;
 }
 
 .sabores__title>p {
-    /* background-color: red; */
     display: flex;
-    /* justify-content: center; */
+    color: #333865;
     align-items: center;
 }
 
@@ -366,12 +427,11 @@ span {
     display: flex;
     justify-content: space-between;
     padding: 0 5em;
-    /* background-color: red; */
 }
 
 .sabores__container__items>* {
     font-size: 2rem;
-    color: rgba(0, 0, 0, 0.5);
+    color: #333865;
     cursor: pointer;
     transition: color 500ms;
 }
@@ -379,7 +439,6 @@ span {
 .sabores__plus {
     display: flex;
     align-items: center;
-    /* background-color: red; */
 }
 
 .girar-plus-abrir {
@@ -418,7 +477,39 @@ span {
 
 .ul__img {
     grid-area: 1 / 4 / 5 / -1;
+    background-image: url(../Images/vainilla-cookies.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#cremas .ul__img{
+    grid-area: 1 / 4 / 5 / -1;
+    background-image: url(../Images/stracciatella.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#frutales_al_agua .ul__img{
+    grid-area: 1 / 4 / 5 / -1;
     background-image: url(../Images/cheesecake.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#chocolates .ul__img{
+    grid-area: 1 / 4 / 5 / -1;
+    background-image: url(../Images/menta-chocolate.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#dulce_de_leche .ul__img{
+    grid-area: 1 / 4 / 5 / -1;
+    background-image: url(../Images/dulce-de-leche.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -434,6 +525,205 @@ li[nuevo]::after {
     border-radius: 5px;
     margin: 0 0.5em;
     padding: 0.2em;
+}
+/* ////// */
+/* ACERCA */
+/* ////// */
+
+.acerca{
+    padding: 3em;
+    color: #111126;
+}
+
+.acerca h2{
+    color: #333865;
+    font-weight: bold;
+}
+
+.acerca__texto{
+    margin-bottom: 6em;
+}
+
+.acerca__texto__titulos{
+    margin-bottom: 6em;
+}
+
+.acerca__texto__titulos > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.acerca__texto__titulos p {
+    text-align:justify;
+    align-self: flex-start;
+}
+
+.acerca__texto__titulos img{
+    background-color: green;
+    max-width: 250px;
+    border-radius: 50%;
+}
+
+.acerca__texto__titulos > h2{
+    margin-bottom: 1em;
+}
+
+.acerca__texto__tarjetas > h2{
+    margin-bottom: 1em;
+}
+
+.acerca__texto__tarjetas__grid{
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr) ;
+    gap: 2em;
+    list-style: none;
+}
+
+.acerca__texto__tarjetas__grid__item{
+    padding: 1em;
+    border-radius: 20px;
+    border: 1px solid #333865;
+    background-color: #e9d9ff;
+    box-shadow: 6px 6px 0 #333865;
+    font-size: 0.8em;
+    font-weight: 100;
+}
+
+.acerca__texto__tarjetas__grid__item > h3{
+    margin-bottom: 1em;
+}
+
+.acerca__ubicacion {
+    margin-bottom: 6em;
+}
+
+.acerca__ubicacion > h2{
+    margin-bottom: 1em;
+}
+
+.acerca__ubicacion__iframe{
+    display: grid;
+    grid-template-rows: min-content repeat(3, 1fr);
+    padding: 2em;
+    border-radius: 20px;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+}
+
+.acerca__ubicacion__iframe p{
+    text-align: justify;
+}
+
+.acerca__ubicacion__iframe__mapa{
+    border: 1px solid #333865;
+    grid-row: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: fit-content;
+}
+
+.acerca__trabaja > h2{
+    margin-bottom: 1em;
+}
+
+.acerca__trabaja__formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.acerca__trabaja__formulario div{
+    display: flex;
+    flex-direction: column;
+}
+
+.acerca__trabaja__formulario label{
+    margin-bottom: 1em;
+}
+
+.acerca__trabaja__formulario span{
+    color: red;
+}
+
+.acerca__trabaja__formulario input{
+    border-radius: 50px;
+    background-color: var(--inputFormColor);
+    border: 1px solid #110f27;
+    padding: 1em; 
+}
+
+.acerca__trabaja__formulario textarea{
+    border-radius: 20px;
+    border: 1px solid #110f27;
+    padding: 1em;
+}
+
+.acerca__trabaja__formulario *:focus{
+    outline: 2px solid #ffc7f4;
+}
+
+.acerca__trabaja__formulario__submit{
+    cursor: pointer;
+    transition: background 500ms ease;
+}
+
+.acerca__trabaja__formulario__submit:hover{
+    background-color: #e9d9ff;
+}
+
+.form--error{
+    animation: formularioError normal 700ms ease-in;
+}
+
+.form--aceptado{
+    animation: formularioAceptado normal 700ms ease-in;
+}
+/* /////////// */
+/* OPINIONES */
+/* /////////// */
+
+.opiniones{
+    padding: 3em;
+}
+
+.opiniones__header{
+    margin-bottom: 2em;
+    color: #333865;
+}
+
+.opiniones--app{
+    display: flex;
+    gap: 2rem;
+}
+
+.user{
+    background-color: #e9d9ff;
+    border: 1px solid #333865;
+    color: #333865;
+    box-shadow: 6px 6px 0 #333865;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    border-radius: 20px;
+}
+
+.user__name{
+    font-weight: bold;
+}
+
+.user__img{
+    border-radius: 50%;
+    border: 1px solid #333865;
 }
 
 /* ////// */
@@ -461,7 +751,6 @@ footer p {
 
 .footer__div {
     color: rgb(160, 160, 160);
-    /* background-color: red; */
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -481,25 +770,48 @@ footer p {
 MediaQuerys
 ////////////////////////////////////////
 */
-
-@media only screen and (max-width:480px) {
+/* TABLETS */
+@media screen and (max-width:768px){
     .inicio {
         grid-template: 2fr 1fr / 1fr;
     }
 
-    .inicio__box {
-        /* background-color: red; */
-        border-bottom: 1px solid var(--borderColor);
+    .inicio__box__img{
+        transform: translateY(-10px);
     }
 
-    .ofertas {
-        grid-template: 100px 1fr / 1fr 1fr 1fr;
-        grid-template: 100px repeat(3, 1fr) / 1fr;
+    .articulos{
+        grid-template: repeat(3, 1fr) / 1fr;
+        /* background-color: green; */
     }
 
-    .ofertas__box {
-        display: flex;
-        flex-direction: row;
+    .ofertas__grande{
+        grid-area: 1 / 1 / 2 / 1;
+    }
+
+    .ofertas__pequeñas{
+        grid-area: 2 / 1 / 4 / 1 ;
+    }
+
+    .acerca__texto__titulos > div{
+        flex-wrap: wrap;
+    }
+
+    .acerca__texto__tarjetas__grid{
+        grid-template: repeat(3, 1fr) / repeat(2, 1fr) ;
+    }
+
+    .opiniones--app{
+        flex-wrap: wrap;
+    }
+}
+
+/* SMART PHONES */
+@media screen and (max-width:480px) {
+
+
+    .acerca__texto__tarjetas__grid{
+        grid-template: repeat(6, 1fr) / 1fr ;
     }
 }
 
@@ -571,5 +883,33 @@ Animaciones
 
     100% {
         transform: rotate(-5deg) translateX(10px) translateY(-30px);
+    }
+}
+
+@keyframes formularioAceptado {
+    0%{
+        background-color: var(--inputFormColor);
+    }
+
+    10%{
+        background-color: rgb(121, 219, 124);
+    }
+
+    100%{
+        background-color: var(--inputFormColor);
+    }
+}
+
+@keyframes formularioError {
+    0%{
+        background-color: var(--inputFormColor);
+    }
+
+    10%{
+        background-color: rgb(219, 121, 121);
+    }
+
+    100%{
+        background-color: var(--inputFormColor);
     }
 }
